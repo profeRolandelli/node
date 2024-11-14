@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carrito</title>
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/custom.css">
+</head>
+
+<body>
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="four columns">
+                    <img src="img/logo.jpg" id="logo">
+                </div>
+                <div class="two columns u-pull-right">
+                    <ul>
+                        <li class="submenu">
+                            <img src="img/cart.png" id="img-carrito">
+                            <div id="carrito">
+
+                                <table id="lista-carrito" class="u-full-width">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th>Cantidad</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+
+                                <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="six columns">
+                    <div class="contenido-hero">
+                        <h2>Aprende algo nuevo</h2>
+                        <p>Todos los cursos a $15</p>
+                        <form action="#" id="busqueda" method="post" class="formulario">
+                            <input class="u-full-width" type="text" placeholder="¿Que te gustaría Aprender?"
+                                id="buscador">
+                            <input type="submit" id="submit-buscador" class="submit-buscador">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="barra">
+        <div class="container">
+            <div class="row">
+                <div class="four columns icono icono1">
+                    <p>20,000 Cursos en línea <br>
+                        Explora los temas más recientes</p>
+                </div>
+                <div class="four columns icono icono2">
+                    <p>Instructores Expertos <br>
+                        Aprende con distintos estilos</p>
+                </div>
+                <div class="four columns icono icono3">
+                    <p>Acceso de por vida <br>
+                        Aprende a tu ritmo</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- PRUEBA
+    <h1>Verificando los datos de cursos</h1>
+    <% if (cursos.length > 0) { %>
+      <p>Hay <%= cursos.length %> cursos disponibles.</p>
+    <% } else { %>
+      <p>No se encontraron cursos.</p>
+    <% } %>
+
+    <h2>Primer curso:</h2>
+    <% if (cursos.length > 0) { %>
+      <h2>Nombre: <%= cursos[0].nombreCurso %></h2>
+    <% } else { %>
+      <p>No se encontraron cursos.</p>
+    <% } %> -->
+
+
+    <!-- 
+
+    <% cursos.forEach(function(curso) { %>
+           <h2> <%= curso.nombreCurso %> </h2> 
+
+
+        <% }) %> -->
+
+
+    <div id="lista-cursos" class="container">
+        <h1 id="encabezado" class="encabezado">Cursos En Línea</h1>
+
+        <%cursos.forEach(function(curso,index){ %>
+            <% console.log(index%3) %>
+            <% if(index%3==0){ %>
+                <% console.log("FILA" + index%3 ) %>
+                <div class="row">
+            <% } %>
+                        <div class="four columns">
+                            <div class="card">
+                                    <img src=" <%= curso.imagen %> " class="imagen-curso u-full-width">
+                                    <div class="info-card">
+                                        <h4>
+                                            <%= curso.nombreCurso %>
+                                        </h4>
+                                        <p>
+                                            <%= curso.autor %>
+                                        </p>
+                                        <img src="img/estrellas.png">
+                                        <p class="precio"> $ <%= curso.precio %> <span class="u-pull-right ">
+                                                    <%= curso.precio*0.75 %>
+                                                </span></p>
+                                        <a href="#" class="u-full-width button-primary button input agregar-carrito"
+                                            data-id="1">Agregar Al Carrito</a>
+                                    </div>
+                            </div> <!--.card-->
+                        </div>
+
+
+            <% if(index%3==2){ %>
+                </div>
+            <% } %>
+
+        <%} ) %>
+    </div>
+
+   
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="four columns">
+                    <nav id="principal" class="menu">
+                        <a class="enlace" href="/ReservasSalones">ReservasSalones</a>
+                        <a class="enlace" href="/admin">Admin</a>
+                        <a class="enlace" href="#">Conviertete en Instructor</a>
+                        <a class="enlace" href="#">Aplicaciones Móviles</a>
+                        <a class="enlace" href="#">Soporte</a>
+                    </nav>
+                </div>
+                <div class="four columns">
+                    <nav id="secundaria" class="menu">
+                        <a class="enlace" href="#">¿Quienes Somos?</a>
+                        <a class="enlace" href="#">Empleo</a>
+                        <a class="enlace" href="#">Blog</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script src="js/app.js"></script> -->
+
+</body>
+
+</html>
